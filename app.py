@@ -16,7 +16,7 @@ from model import KeyPointClassifier
 from model import PointHistoryClassifier
 
 
-def get_args():
+def get_args(): #This function allows me to control the project from command line without changing code
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--device", type=int, default=0)
@@ -27,11 +27,11 @@ def get_args():
     parser.add_argument("--min_detection_confidence",
                         help='min_detection_confidence',
                         type=float,
-                        default=0.7)
+                        default=0.7)# Tells the program to accept a hand only when MediaPipe is 70% sure that its a hand (balanced)
     parser.add_argument("--min_tracking_confidence",
                         help='min_tracking_confidence',
                         type=int,
-                        default=0.5)
+                        default=0.5)#Given a detected hand, Track it
 
     args = parser.parse_args()
 
